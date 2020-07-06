@@ -1,47 +1,10 @@
 # PIC and AVR LTE Demo Files
 
-This repository contains the .hex files that you can use to program your Microchipo AVR or PIC boards with to demo cellular function using the Ublox SARA-R4 LTE CAT-M1 click board.
+This repository contains the .hex files that you can use to program your Microchipo AVR or PIC boards with to demo cellular function using the Ublox SARA-R4 LTE CAT-M1 click board. Below you will see a short description of each .hex file and which board it can be used with. You'll also find instructions on how to get the demo running.
 
-Below you will see a short description of each .hex file and which board it can be used with.
-
-Applications Rev 1.00
-Documentation 1.10
+Applications Rev 1.00 & Documentation Rev 1.10
 
 Notes - Updated documentation with pictures, links, and demo walk through.
-
-Coming soon - Walk through of UART pass through on IoT boards.
-
----
-
-<a href="url"><img src="images/all_boards.jpg" style="align:center" height="260"></a>
-
----
-
-## Individual .hex Files and their Associated Boards
-
-**AVR-BLE_LTE_Click.hex** \|  [AVR-BLE](https://www.futureelectronics.com/p/development-tools--microcontroller-microprocessor--8-bit-eval-board/dt100111-microchip-5123703)
-
-Demo Features: This application will provide a wired UART pass through that will allow you to control the cellular module via AT commands. Addtionally, there is a small API to send commands to the cellular module over the UART which you can use to develop your own application.
-
-**AVR-IoT_LTE_Click.hex** \| [AVR-IoT WA](https://www.futureelectronics.com/p/development-tools--rf-wireless/ev15r70a-microchip-8125363)
-
-Demo Features: This application will provide a wired UART pass through that will allow you to control the cellular module via AT commands. Addtionally, there is a small API to send commands to the cellular module over the UART which you can use to develop your own application.
-
-**FCS-LTE_AVR_LIGHTBLUE_EXPLORER_DEMO.hex** \| [AVR-BLE](https://www.futureelectronics.com/p/development-tools--microcontroller-microprocessor--8-bit-eval-board/dt100111-microchip-5123703)
-
-Demo Features: This application is based on Microchip's existing LightBlue Explorer demo. Via BLE, you can control LEDs, see temperature, and accelrometer data. Additionally, with using the ASCII or Hex text box on the LightBlue app you can communicate with the cellular module over BLE by issuing it AT commands.
-
-**FCS-LTE_PIC_LIGHTBLUE_EXPLORER_DEMO.hex** \| [PIC-BLE](https://www.futureelectronics.com/p/development-tools--microcontroller-microprocessor--8-bit-eval-board/dt100112-microchip-6123703)
-
-Demo Features: This application is based on Microchip's existing LightBlue Explorer demo. Via BLE, you can control LEDs, see temperature, and accelrometer data. Additionally, with using the ASCII or Hex text box on the LightBlue app you can communicate with the cellular module over BLE by issuing it AT commands.
-
-**PIC-BLE_LTE_Click.hex** \| [PIC-BLE](https://www.futureelectronics.com/p/development-tools--microcontroller-microprocessor--8-bit-eval-board/dt100112-microchip-6123703)
-
-Demo Features: This application will provide a wired UART pass through that will allow you to control the cellular module via AT commands. Addtionally, there is a small API to send commands to the cellular module over the UART which you can use to develop your own application.
-
-**PIC-IoT_LTE_Click.hex** \| [PIC-IoT WA](https://www.futureelectronics.com/p/development-tools--rf-wireless/ev54y39a-microchip-9125363)
-
-Demo Features: This application will provide a wired UART pass through that will allow you to control the cellular module via AT commands. Addtionally, there is a small API to send commands to the cellular module over the UART which you can use to develop your own application.
 
 ---
 
@@ -85,6 +48,34 @@ Make sure you've followed the steps above to appropriately set up your hardware 
     + <a href="url"><img src="images/MCHP-4.png" height="480"></a>
 5. You're now able to send whatever commands you would like to the SARA-R4. For more information on u-blox AT commands please refer to the guide below.
     - [AT Command Guide](https://www.u-blox.com/sites/default/files/SARA-R4_ATCommands_%28UBX-17003787%29.pdf)
+
+---
+
+## Individual .hex Files and their Associated Boards
+
+**AVR-BLE_LTE_Click.hex** \|  [AVR-BLE](https://www.futureelectronics.com/p/development-tools--microcontroller-microprocessor--8-bit-eval-board/dt100111-microchip-5123703)
+
+Demo Features: This application will provide a wired UART pass through that will allow you to control the cellular module via AT commands. Addtionally, there is a small API to send commands to the cellular module over the UART which you can use to develop your own application.
+
+**AVR-IoT_LTE_Click.hex** \| [AVR-IoT WA](https://www.futureelectronics.com/p/development-tools--rf-wireless/ev15r70a-microchip-8125363)
+
+Demo Features: This application will provide a wired UART pass through that will allow you to control the cellular module via AT commands. Addtionally, there is a small API to send commands to the cellular module over the UART which you can use to develop your own application.
+
+**FCS-LTE_AVR_LIGHTBLUE_EXPLORER_DEMO.hex** \| [AVR-BLE](https://www.futureelectronics.com/p/development-tools--microcontroller-microprocessor--8-bit-eval-board/dt100111-microchip-5123703)
+
+Demo Features: This application is based on Microchip's existing LightBlue Explorer demo. Via BLE, you can control LEDs, see temperature, and accelrometer data. Additionally, with using the ASCII or Hex text box on the LightBlue app you can communicate with the cellular module over BLE by issuing it AT commands.
+
+**FCS-LTE_PIC_LIGHTBLUE_EXPLORER_DEMO.hex** \| [PIC-BLE](https://www.futureelectronics.com/p/development-tools--microcontroller-microprocessor--8-bit-eval-board/dt100112-microchip-6123703)
+
+Demo Features: This application is based on Microchip's existing LightBlue Explorer demo. Via BLE, you can control LEDs, see temperature, and accelrometer data. Additionally, with using the ASCII or Hex text box on the LightBlue app you can communicate with the cellular module over BLE by issuing it AT commands.
+
+**PIC-BLE_LTE_Click.hex** \| [PIC-BLE](https://www.futureelectronics.com/p/development-tools--microcontroller-microprocessor--8-bit-eval-board/dt100112-microchip-6123703)
+
+Demo Features: This application will provide a wired UART pass through that will allow you to control the cellular module via AT commands. Addtionally, there is a small API to send commands to the cellular module over the UART which you can use to develop your own application.
+
+**PIC-IoT_LTE_Click.hex** \| [PIC-IoT WA](https://www.futureelectronics.com/p/development-tools--rf-wireless/ev54y39a-microchip-9125363)
+
+Demo Features: This application will provide a wired UART pass through that will allow you to control the cellular module via AT commands. Addtionally, there is a small API to send commands to the cellular module over the UART which you can use to develop your own application.
 
 ---
 
