@@ -34,6 +34,37 @@ Notes - Updated documentation with pictures, links, and demo walk through.
 
 ---
 
+## Cellular Setup
+
+The u-blox SARA-R4 module must be configured with an MNO (Mobile Network Operator) profile and the correct APN for the sim card you are using. Please follow the instructions below, but remember that one size may not fit all so we recommend checking the [SARA-R4 AT Command Guide](https://www.u-blox.com/sites/default/files/SARA-R4_ATCommands_%28UBX-17003787%29.pdf) if needed.
+
++ AT+CFUN=0
+    + Stop the protocol stack before changing MNO profile settings.
++ AT+UMNOPROF=?
+    + Shows a list of the possible network operators you can select.
++ AT+UMNOPROF=X
+    + Where X is equal to the operator you want to use. It is possible to leave it at the value of 0 in which it will use the default option.
++ AT+CFUN=15
+    + This will reboot which is required whenver you change the MNO profile.
++ AT+CGDCONT=2,"IP","cnviot.com","0.0.0.0"",0,0,0,0
+    + CGDCONT let's you set the APN. This example shows a setup for a Convergia SIM APN that is IPv4 based with no static address. You may need to alter this command if you are using a different SIM/Carrier.
+
+Once you have completed the above commands, you should be able to connect to a network. You can check your network registration status and your mobile operator with the commands below.
+
++ AT+COPS=?
+    + You have to be patient with this command. It will scan and return which networks are available, but it can take minutes to complete.
+    + Be sure you have some networks availabe. You can see what numbers represent which carriers here: https://www.roamingzone.com/mnc/
++ AT+COPS=0,0
+    + This will allow the radio module to automatically handle which operator should be used.
+    + If you want to manually override this then please refer to the AT command guide. 
++ AT+CEREG?
+    + Confirms whether or not you are connected to a network.
++ AT+COPS?
+    + Check to see if you have a network operator. You may see something like ATT or Verizon come back.
+
+
+---
+
 ## Running Through the BLE Demo
 
 Make sure you've followed the steps above to appropriately set up your hardware and flash it with the correct .hex file. Now, follow the steps below.
@@ -103,7 +134,8 @@ Demo Features: This application will provide a wired UART pass through that will
     - [Microchip AVR IoT GitHub](https://github.com/microchip-pic-avr-solutions/avr-iot-aws-sensor-node-mplab)
 
 3. Ublox
-    - [u-blox SARA-R4 Product Page](https://www.u-blox.com/en/product/sara-r4-series)
+    - [SARA-R4 Product Page](https://www.u-blox.com/en/product/sara-r4-series)
+    - [SARA-R4 AT Command Guide](https://www.u-blox.com/sites/default/files/SARA-R4_ATCommands_%28UBX-17003787%29.pdf)
     - [Mikroe LTE Click (SARA-R4)](https://www.mikroe.com/lte-iot-click)
  
 
