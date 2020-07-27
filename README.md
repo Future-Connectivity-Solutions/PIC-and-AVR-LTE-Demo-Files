@@ -47,20 +47,20 @@ The u-blox SARA-R4 module must be configured with an MNO (Mobile Network Operato
 + AT+CFUN=15
     + This will reboot which is required whenver you change the MNO profile.
 + AT+CGDCONT=1,"IP","jtm2m"
-    + CGDCONT let's you set the APN. This example shows a setup for a Jersey Telecom APN that is IPv4 based with no static address. You may need to alter this command if you are using a different SIM/Carrier.
-+ AT+CGDCONT=2,"",""
-    + This will make sure that you don't have a secondary APN set up. We want to use only the primary APN in "slot 1" that we set up in the previous step.
+    + CGDCONT let's you set the APN. This example shows a setup for a Jersey Telecom APN that is IPv4 based with no static address. You may need to alter this command if you are using the APN provided by your SIM provider.
 + AT+CGDCONT?
     + This will read back your APN settings so that you can verify they look correct. Note that you may have an IP address assigned instead of just 0.0.0.0 which is a good indicator that you are connected to a network and able to pass traffic.
++ AT+CMEE=2
+    +Set error reporting to be verbose prior to reset.
++ AT+CGEREP=?
+    + Report any network GPRS URC events.
 + AT+CFUN=1,1
     + Sets the functionality and reset modes.
-+ AT+CMEE=2
-    + Set error reporting to be verbose
-+ AT+COPS?
-    + You have to be patient with this command. It will scan and return which networks are available, but it can take minutes to complete.
-    + Be sure you have some networks availabe. You can see what numbers represent which carriers here: https://www.roamingzone.com/mnc/ 
 + AT+CEREG?
     + Read back the Network Registration Status. You want to focus on the second parameter that comes back. A value of 1 means you are registered on the home network. A value of 2 means you are not attached, but still scanning. Finally, a value of 5 means you are attached but roaming. Thus, you are looking for a value of 1 or 5.
++ AT+COPS?
+    + After the network registration (CEREG value of 1 or 5) this command will list which network to which you have attached.  To see all networks available you can do an AT+COPS=? – this command can take minutes to scan all networks, especially if all bands are enabled (see AT+UBANDMASK command if you want to limit bands to carrier or regional specific bands)
+    + You can see what numbers represent which carriers here: https://www.roamingzone.com/mnc/ 
 
 ---
 
