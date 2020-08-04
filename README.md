@@ -47,11 +47,12 @@ The u-blox SARA-R4 module must be configured with an MNO (Mobile Network Operato
 + AT+CFUN=15
     + This will reboot which is required whenver you change the MNO profile.
 + AT+CGDCONT=1,"IP","jtm2m"
-    + CGDCONT let's you set the APN. This example shows a setup for a Jersey Telecom APN that is IPv4 based with no static address. You may need to alter this command if you are using the APN provided by your SIM provider.
+    + CGDCONT let's you set the APN. It is typically okay to leave the default value here so you can possibly skip this command. It should auto select the correct APN for you.
+    + If you want to explicitly set your APN, this example shows a setup for a Jersey Telecom APN that is IPv4 based with no static address. You may need to alter this command if you are using the APN provided by your SIM provider.
 + AT+CGDCONT?
     + This will read back your APN settings so that you can verify they look correct. Note that you may have an IP address assigned instead of just 0.0.0.0 which is a good indicator that you are connected to a network and able to pass traffic.
 + AT+CMEE=2
-    +Set error reporting to be verbose prior to reset.
+    + Set error reporting to be verbose prior to reset.
 + AT+CGEREP=?
     + Report any network GPRS URC events.
 + AT+CFUN=1,1
